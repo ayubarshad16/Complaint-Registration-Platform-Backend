@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Complaint | ResolveHub</title>
+    <meta name="description" content="Register a new complaint on ResolveHub.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            ResolveHub
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Complaints</a>
+            <a href="add-complaint.html" class="active">Register Complaint</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <header>
+            <h1 class="page-title" style="text-align: center;">New Complaint</h1>
+            <p class="page-subtitle" style="text-align: center;">Please provide details to help us address your issue.</p>
+        </header>
+
+        <div class="form-card">
+            <form id="complaint-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" class="form-control" placeholder="e.g. New York" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" class="form-control" placeholder="+1 (555) 000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="complaint">Complaint Details</label>
+                    <textarea id="complaint" class="form-control" placeholder="Describe your issue in detail..." required></textarea>
+                </div>
+
+                <div id="ai-question-section" style="display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                    <div class="form-group">
+                        <label for="ai-answer" id="ai-question-label" style="color: var(--accent-color); font-weight: 600; line-height: 1.4;">Generating question...</label>
+                        <textarea id="ai-answer" class="form-control" placeholder="Your answer..." disabled></textarea>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="button" id="btn-generate" class="btn-submit" style="background: linear-gradient(135deg, #10b981, #059669); margin-top: 0;">Generate Question</button>
+                    <button type="submit" id="btn-submit" class="btn-submit" style="display: none; margin-top: 0;">Submit Complaint</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 ResolveHub. All rights reserved.
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
